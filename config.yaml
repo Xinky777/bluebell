@@ -3,6 +3,8 @@ app:
   mode: "dev"
   version: "v0.0.1"
   port: 8081
+  start_time: "2022-03-01"
+  machine_id: 1
 
 log:
   level: "debug"

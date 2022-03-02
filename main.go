@@ -11,7 +11,8 @@ import (
 	"web_app/dao/mysql"
 	"web_app/dao/redis"
 	"web_app/logger"
-	"web_app/routes"
+	"web_app/pkg/snowflake"
+	"web_app/router"
 	"web_app/settings"
 
 	"github.com/spf13/viper"
@@ -50,8 +51,14 @@ func main() {
 	}
 	defer redis.Close()
 
+	//雪花算法生成随机ID
+	if err := snowflake.Init("2022-03-01", settings.Conf.MachineID); err != nil {
+		fmt.Printf("Init snowflake failed,err:%v\n", err)
+		return
+	}
+
 	//5.注册路由
-	r := routes.Setup()
+	r := router.Setup()
 
 	//6.启动服务（优雅开关机）
 	srv := &http.Server{
