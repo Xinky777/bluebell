@@ -14,7 +14,7 @@ type AppConfig struct {
 	Name         string `mapstructure:"name"`
 	Mode         string `mapstructure:"mode"`
 	Version      string `mapstructure:"version"`
-	Post         int    `mapstructure:"post"`
+	Port         int    `mapstructure:"port"`
 	StartTime    string `mapstructure:"start_time"`
 	MachineID    int64  `mapstructure:"machine_id"`
 	*LogConfig   `mapstructure:"log"`
@@ -51,15 +51,15 @@ func Init() (err error) {
 	//方法1：直接指定配置文件路径（相对路径或者绝对路径）
 	//指定具体配置文件用该函数 既包含文件名 还包含配置名
 	//相对路径：相对执行的可执行文件的相对路径
-	//viper.SetConfigFile("./config.yaml")
+	viper.SetConfigFile("./config.yaml")
 	//绝对路径：系统中实际的文件路径
 	//viper.SetConfigFile("/Users/xinky/go/src/web_app/config.yaml")
 
 	//方法2：指定配置文件名和配置文件的位置，viper自行查找可用的配置文件
 	//配置文件名不需要带后缀
 	//配置文件的位置可配置多个
-	viper.SetConfigName("config") //指定配置文件名称（不带后缀）
-	viper.AddConfigPath(".")      //指定查找配置文件的路径（此处使用相对路径）
+	//viper.SetConfigName("config") //指定配置文件名称（不带后缀）
+	//viper.AddConfigPath(".")      //指定查找配置文件的路径（此处使用相对路径）
 
 	//配合远程配置中心使用 告诉viper当前的数据使用什么格式去解析
 	//	viper.SetConfigType("yaml")   //指定配置文件类型 如果是JSON格式配置文件，只需要将"yaml"改为"json"即可
