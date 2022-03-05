@@ -125,3 +125,9 @@
 {"level":"INFO","time":"2022-03-05T15:45:52.293+0800","caller":"logger/logger.go:83","msg":"/signup","status":200,"method":"POST","path":"/signup","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.29.0","errors":"","cost":0.002112}
 {"level":"DEBUG","time":"2022-03-05T15:49:31.193+0800","caller":"bluebell/main.go:31","msg":"logger init success..."}
 {"level":"DEBUG","time":"2022-03-05T15:50:55.371+0800","caller":"bluebell/main.go:31","msg":"logger init success..."}
+{"level":"DEBUG","time":"2022-03-05T16:39:01.684+0800","caller":"bluebell/main.go:31","msg":"logger init success..."}
+{"level":"ERROR","time":"2022-03-05T16:39:43.251+0800","caller":"controller/user.go:57","msg":"login with invalid param","error":"Key: 'ParamLogin.password' Error:Field validation for 'password' failed on the 'required' tag"}
+{"level":"INFO","time":"2022-03-05T16:39:43.251+0800","caller":"logger/logger.go:83","msg":"/login","status":200,"method":"POST","path":"/login","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.29.0","errors":"","cost":0.000581459}
+{"level":"INFO","time":"2022-03-05T16:40:12.350+0800","caller":"logger/logger.go:83","msg":"/login","status":200,"method":"POST","path":"/login","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.29.0","errors":"","cost":0.000730708}
+{"level":"ERROR","time":"2022-03-05T16:40:22.724+0800","caller":"controller/user.go:75","msg":"logic.Login failed","error":"用户不存在"}
+{"level":"INFO","time":"2022-03-05T16:40:22.725+0800","caller":"logger/logger.go:83","msg":"/login","status":200,"method":"POST","path":"/login","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.29.0","errors":"","cost":0.000926584}
