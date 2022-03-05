@@ -23,7 +23,7 @@ func main() {
 	}
 
 	//2.初始化日志
-	if err := logger.Init(settings.Conf.LogConfig); err != nil {
+	if err := logger.Init(settings.Conf.LogConfig, settings.Conf.Mode); err != nil {
 		fmt.Printf("Init logger failed,err:%v\n", err)
 		return
 	}
@@ -57,9 +57,9 @@ func main() {
 	}
 
 	//5.注册路由
-	r := router.Setup()
+	r := router.Setup(settings.Conf.Mode)
 	s := settings.Conf.Port
-	fmt.Println(s)
+	fmt.Printf("端口号：%v\n", s)
 	if err := r.Run(fmt.Sprintf(":%d", settings.Conf.Port)); err != nil {
 		fmt.Printf("run server failed,err:%v\n", err)
 		return
