@@ -8,7 +8,8 @@ import (
 
 //存放业务逻辑的代码
 
-func SingUp(p *models.ParamSignUp) (err error) {
+//SignUp 注册业务逻辑
+func SignUp(p *models.ParamSignUp) (err error) {
 	//1.判断用户是否存在
 	if err = mysql.CheckUserExist(p.Username); err != nil {
 		//数据库查询出错
@@ -25,4 +26,15 @@ func SingUp(p *models.ParamSignUp) (err error) {
 	}
 	//3.保存进数据库
 	return mysql.InsertUser(user)
+}
+
+//Login 注册业务逻辑
+func Login(p *models.ParamLogin) (err error) {
+	//1.将用户输入的参数存放到user结构体中 用于后续步骤与数据库中数据校验
+	user := &models.User{
+		Username: p.Username,
+		Password: p.Password,
+	}
+	//1.数据库校验并登陆
+	return mysql.Login(user)
 }
