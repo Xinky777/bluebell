@@ -131,3 +131,22 @@
 {"level":"INFO","time":"2022-03-05T16:40:12.350+0800","caller":"logger/logger.go:83","msg":"/login","status":200,"method":"POST","path":"/login","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.29.0","errors":"","cost":0.000730708}
 {"level":"ERROR","time":"2022-03-05T16:40:22.724+0800","caller":"controller/user.go:75","msg":"logic.Login failed","error":"用户不存在"}
 {"level":"INFO","time":"2022-03-05T16:40:22.725+0800","caller":"logger/logger.go:83","msg":"/login","status":200,"method":"POST","path":"/login","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.29.0","errors":"","cost":0.000926584}
+{"level":"DEBUG","time":"2022-03-06T16:06:26.561+0800","caller":"bluebell/main.go:31","msg":"logger init success..."}
+{"level":"ERROR","time":"2022-03-06T16:06:30.299+0800","caller":"controller/user.go:69","msg":"logic.Login failed","username":"泽伟1","error":"用户已存在"}
+{"level":"INFO","time":"2022-03-06T16:06:30.299+0800","caller":"logger/logger.go:83","msg":"/login","status":200,"method":"POST","path":"/login","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.29.0","errors":"","cost":0.017971}
+{"level":"ERROR","time":"2022-03-06T16:06:35.746+0800","caller":"controller/user.go:69","msg":"logic.Login failed","username":"泽伟1","error":"用户已存在"}
+{"level":"INFO","time":"2022-03-06T16:06:35.746+0800","caller":"logger/logger.go:83","msg":"/login","status":200,"method":"POST","path":"/login","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.29.0","errors":"","cost":0.000656792}
+{"level":"INFO","time":"2022-03-06T16:06:39.921+0800","caller":"logger/logger.go:83","msg":"/login","status":200,"method":"POST","path":"/login","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.29.0","errors":"","cost":0.001471792}
+{"level":"ERROR","time":"2022-03-06T16:06:46.405+0800","caller":"controller/user.go:69","msg":"logic.Login failed","username":"泽伟1","error":"用户已存在"}
+{"level":"INFO","time":"2022-03-06T16:06:46.405+0800","caller":"logger/logger.go:83","msg":"/login","status":200,"method":"POST","path":"/login","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.29.0","errors":"","cost":0.000677917}
+{"level":"INFO","time":"2022-03-06T16:06:59.905+0800","caller":"logger/logger.go:83","msg":"/login","status":200,"method":"POST","path":"/login","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.29.0","errors":"","cost":0.000515125}
+{"level":"ERROR","time":"2022-03-06T16:07:03.756+0800","caller":"controller/user.go:69","msg":"logic.Login failed","username":"炫1狗","error":"用户已存在"}
+{"level":"INFO","time":"2022-03-06T16:07:03.756+0800","caller":"logger/logger.go:83","msg":"/login","status":200,"method":"POST","path":"/login","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.29.0","errors":"","cost":0.000577375}
+{"level":"ERROR","time":"2022-03-06T16:07:11.303+0800","caller":"controller/user.go:55","msg":"login with invalid param","error":"Key: 'ParamLogin.password' Error:Field validation for 'password' failed on the 'required' tag"}
+{"level":"INFO","time":"2022-03-06T16:07:11.304+0800","caller":"logger/logger.go:83","msg":"/login","status":200,"method":"POST","path":"/login","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.29.0","errors":"","cost":0.000294375}
+{"level":"DEBUG","time":"2022-03-06T16:31:41.285+0800","caller":"bluebell/main.go:31","msg":"logger init success..."}
+{"level":"ERROR","time":"2022-03-06T16:31:48.287+0800","caller":"controller/user.go:55","msg":"login with invalid param","error":"Key: 'ParamLogin.password' Error:Field validation for 'password' failed on the 'required' tag"}
+{"level":"INFO","time":"2022-03-06T16:31:48.287+0800","caller":"logger/logger.go:83","msg":"/login","status":200,"method":"POST","path":"/login","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.29.0","errors":"","cost":0.000304375}
+{"level":"ERROR","time":"2022-03-06T16:32:26.773+0800","caller":"controller/user.go:69","msg":"logic.Login failed","username":"炫1狗","error":"用户已存在"}
+{"level":"INFO","time":"2022-03-06T16:32:26.774+0800","caller":"logger/logger.go:83","msg":"/login","status":200,"method":"POST","path":"/login","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.29.0","errors":"","cost":0.007514167}
+{"level":"INFO","time":"2022-03-06T16:32:31.966+0800","caller":"logger/logger.go:83","msg":"/login","status":200,"method":"POST","path":"/login","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.29.0","errors":"","cost":0.001057417}

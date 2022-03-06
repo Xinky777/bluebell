@@ -13,6 +13,12 @@ import (
 
 const secret = "baidu.com"
 
+var (
+	ErrorUserNotExist    = errors.New("用户不存在")
+	ErrorUserExist       = errors.New("用户已存在")
+	ErrorInvalidPassword = errors.New("用户名或密码错误")
+)
+
 //CheckUserExist 检查指定用户名的用户是否存在
 func CheckUserExist(username string) (err error) {
 	sqlStr := `select count(user_id) from user where username = ?`
@@ -21,7 +27,7 @@ func CheckUserExist(username string) (err error) {
 		return err
 	}
 	if count > 0 {
-		return errors.New("用户不存在")
+		return ErrorUserNotExist
 	}
 	return
 }
@@ -51,7 +57,7 @@ func Login(user *models.User) (err error) {
 	err = db.Get(user, sqlStr, user.Username) //从数据库中查询结果 并返回user结构体
 	if err == sql.ErrNoRows {
 		//查询数据库成功 用户不存在
-		return errors.New("用户不存在")
+		return ErrorUserExist
 	}
 	if err != nil {
 		//查询数据库失败
@@ -60,7 +66,7 @@ func Login(user *models.User) (err error) {
 	//2.判断密码是否正确
 	password := encryptPassword(oPassword) //加密后的密码 数据库里存储的是加密后的密码
 	if password != user.Password {         //此处的user.Password是数据库中存储的密码
-		return errors.New("密码错误")
+		return ErrorInvalidPassword
 	}
 	//密码验证成功 返回
 	return
