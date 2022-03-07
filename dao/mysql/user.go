@@ -24,10 +24,12 @@ func CheckUserExist(username string) (err error) {
 	sqlStr := `select count(user_id) from user where username = ?`
 	var count int
 	if err = db.Get(&count, sqlStr, username); err != nil {
+		//数据库查询错误
 		return err
 	}
 	if count > 0 {
-		return ErrorUserNotExist
+		//用户已存在
+		return ErrorUserExist
 	}
 	return
 }
@@ -57,7 +59,7 @@ func Login(user *models.User) (err error) {
 	err = db.Get(user, sqlStr, user.Username) //从数据库中查询结果 并返回user结构体
 	if err == sql.ErrNoRows {
 		//查询数据库成功 用户不存在
-		return ErrorUserExist
+		return ErrorUserNotExist
 	}
 	if err != nil {
 		//查询数据库失败

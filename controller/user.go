@@ -35,7 +35,7 @@ func SignUpHandler(c *gin.Context) {
 	//2.业务处理
 	if err := logic.SignUp(p); err != nil {
 		zap.L().Error("logic.SignUp failed", zap.Error(err))
-		if errors.Is(err, mysql.ErrorUserExist) {
+		if errors.Is(err, mysql.ErrorUserExist) { //判断错误类型是否为 用户已存在
 			ResponseError(c, CodeUserExist)
 			return
 		}
@@ -65,16 +65,18 @@ func LoginHandler(c *gin.Context) {
 		return
 	}
 	//2.业务处理
-	if err := logic.Login(p); err != nil {
+	token, err := logic.Login(p)
+	if err != nil {
 		zap.L().Error("logic.Login failed", zap.String("username", p.Username), zap.Error(err))
-		if errors.Is(err, mysql.ErrorUserExist) {
-			//用户已存在
+		if errors.Is(err, mysql.ErrorUserNotExist) { //判断用户是否存在
+			//用户不存在
 			ResponseError(c, CodeUserNotExist)
 			return
 		}
+		//返回 用户名或密码错误
 		ResponseError(c, CodeInvalidPassword)
 		return
 	}
 	//3.返回响应
-	ResponseSuccess(c, CodeSuccess)
+	ResponseSuccess(c, token)
 }
