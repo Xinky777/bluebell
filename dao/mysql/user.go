@@ -4,7 +4,6 @@ import (
 	"crypto/md5"
 	"database/sql"
 	"encoding/hex"
-	"errors"
 	"web_app/models"
 )
 
@@ -12,12 +11,6 @@ import (
 //待logic层根据业务需求调用
 
 const secret = "baidu.com"
-
-var (
-	ErrorUserNotExist    = errors.New("用户不存在")
-	ErrorUserExist       = errors.New("用户已存在")
-	ErrorInvalidPassword = errors.New("用户名或密码错误")
-)
 
 //CheckUserExist 检查指定用户名的用户是否存在
 func CheckUserExist(username string) (err error) {

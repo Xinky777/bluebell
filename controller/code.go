@@ -21,7 +21,7 @@ var codeMsgMap = map[ResCode]string{
 	CodeInvalidPassword: "用户名或密码错误",
 	CodeServerBusy:      "服务繁忙",
 	CodeInvalidToken:    "无效的token",
-	CodeNeedLogin:       "需要登陆",
+	CodeNeedLogin:       "需要登录",
 }
 
 func (c ResCode) Msg() string {

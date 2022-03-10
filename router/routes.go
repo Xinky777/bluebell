@@ -17,16 +17,21 @@ func Setup(mode string) *gin.Engine {
 	r := gin.New()
 	r.Use(logger.GinLogger(), logger.GinRecovery(true))
 
+	v1 := r.Group("/api/v1")
 	//注册业务路由
-	r.POST("/signup", controller.SignUpHandler)
+	v1.POST("/signup", controller.SignUpHandler)
 
 	//登陆业务路由
-	r.POST("/login", controller.LoginHandler)
+	v1.POST("/login", controller.LoginHandler)
 
-	//如果是登陆用户,通过JWTAuthMiddleware()判断请求头中是否有有效的JWT
-	r.GET("/ping", middlewares.JWTAuthMiddleware(), func(c *gin.Context) {
-		c.String(http.StatusOK, "pong")
-	})
+	v1.Use(middlewares.JWTAuthMiddleware()) //应用JWT认证中间件
+	{
+		v1.GET("/ping", func(c *gin.Context) {
+			c.String(http.StatusOK, "pong")
+		})
+		v1.GET("/community", controller.CommunityHandler)
+		v1.GET("/community/:id", controller.CommunityDetailHandler)
+	}
 
 	r.NoRoute(func(c *gin.Context) {
 		c.JSON(http.StatusOK, gin.H{

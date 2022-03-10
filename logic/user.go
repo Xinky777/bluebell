@@ -29,18 +29,22 @@ func SignUp(p *models.ParamSignUp) (err error) {
 	return mysql.InsertUser(user)
 }
 
-//Login 注册业务逻辑
-func Login(p *models.ParamLogin) (token string, err error) {
+//Login 登录业务逻辑
+func Login(p *models.ParamLogin) (user *models.User, err error) {
 	//1.将用户输入的参数存放到user结构体中 用于后续步骤与数据库中数据校验
-	user := &models.User{
+	user = &models.User{
 		Username: p.Username,
 		Password: p.Password,
 	}
 	//传递的是指针 能够拿到user.UserID
 	if err = mysql.Login(user); err != nil {
-		return "", err
+		return nil, err
 	}
 	//生成jwt
-	return jwt.GenToken(user.UserID, user.Username)
-
+	token, err := jwt.GenToken(user.UserID, user.Username)
+	if err != nil {
+		return
+	}
+	user.Token = token
+	return
 }
