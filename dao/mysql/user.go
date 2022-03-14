@@ -66,3 +66,13 @@ func Login(user *models.User) (err error) {
 	//密码验证成功 返回
 	return
 }
+
+//GetUserById 根据id获取用户信息
+func GetUserById(UserId int64) (User *models.User, err error) {
+	User = new(models.User)
+	sqlStr := `select user_id,username
+				from user
+				where user_id = ?`
+	err = db.Get(User, sqlStr, UserId)
+	return
+}
