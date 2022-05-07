@@ -1,4 +1,4 @@
-module web_app
+module bluebell
 
 go 1.16
 

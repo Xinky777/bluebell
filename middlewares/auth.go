@@ -1,9 +1,9 @@
 package middlewares
 
 import (
+	"bluebell/controller"
+	"bluebell/pkg/jwt"
 	"strings"
-	"web_app/controller"
-	"web_app/pkg/jwt"
 
 	"github.com/gin-gonic/gin"
 )

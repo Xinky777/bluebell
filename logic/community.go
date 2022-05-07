@@ -1,8 +1,8 @@
 package logic
 
 import (
-	"web_app/dao/mysql"
-	"web_app/models"
+	"bluebell/dao/mysql"
+	"bluebell/models"
 )
 
 func GetCommunityList() ([]*models.Community, error) {

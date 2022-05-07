@@ -1,14 +1,14 @@
 package main
 
 import (
+	"bluebell/controller"
+	"bluebell/dao/mysql"
+	"bluebell/dao/redis"
+	"bluebell/logger"
+	"bluebell/pkg/snowflake"
+	"bluebell/router"
+	"bluebell/settings"
 	"fmt"
-	"web_app/controller"
-	"web_app/dao/mysql"
-	"web_app/dao/redis"
-	"web_app/logger"
-	"web_app/pkg/snowflake"
-	"web_app/router"
-	"web_app/settings"
 
 	"go.uber.org/zap"
 )
