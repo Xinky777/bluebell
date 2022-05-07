@@ -30,6 +30,7 @@ func GetPostById(pid int64) (post *models.Post, err error) {
 
 //GetPostList 查询帖子列表
 func GetPostList(page, size int64) (post []*models.Post, err error) {
+	//ORDER BY按照创造时间排序 必须加上DESC字段
 	sqlStr := `select post_id,title,content,author_id,community_id,create_time 
 				from post
 				ORDER BY create_time
