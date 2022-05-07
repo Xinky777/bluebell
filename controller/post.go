@@ -1,9 +1,9 @@
 package controller
 
 import (
+	"bluebell/logic"
+	"bluebell/models"
 	"strconv"
-	"web_app/logic"
-	"web_app/models"
 
 	"go.uber.org/zap"
 

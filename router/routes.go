@@ -1,11 +1,11 @@
 package router
 
 import (
+	"bluebell/controller"
+	"bluebell/logger"
+	"bluebell/middlewares"
 	"net/http"
 	"time"
-	"web_app/controller"
-	"web_app/logger"
-	"web_app/middlewares"
 
 	"github.com/gin-contrib/pprof"
 	"github.com/gin-gonic/gin"

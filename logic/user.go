@@ -1,10 +1,10 @@
 package logic
 
 import (
-	"web_app/dao/mysql"
-	"web_app/models"
-	"web_app/pkg/jwt"
-	"web_app/pkg/snowflake"
+	"bluebell/dao/mysql"
+	"bluebell/models"
+	"bluebell/pkg/jwt"
+	"bluebell/pkg/snowflake"
 )
 
 //存放业务逻辑的代码

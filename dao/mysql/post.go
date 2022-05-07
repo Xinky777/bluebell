@@ -1,8 +1,8 @@
 package mysql
 
 import (
+	"bluebell/models"
 	"strings"
-	"web_app/models"
 
 	"github.com/jmoiron/sqlx"
 

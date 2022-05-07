@@ -1,10 +1,10 @@
 package mysql
 
 import (
+	"bluebell/models"
 	"crypto/md5"
 	"database/sql"
 	"encoding/hex"
-	"web_app/models"
 )
 
 //把每一步数据库操作封装成函数

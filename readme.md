@@ -47,7 +47,10 @@ go build
 
 ./bulebell
 ```
-
+或者使用：
+```shell
+air
+```
 
 
 

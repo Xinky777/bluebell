@@ -1,8 +1,8 @@
 package mysql
 
 import (
+	"bluebell/models"
 	"database/sql"
-	"web_app/models"
 
 	"go.uber.org/zap"
 )
