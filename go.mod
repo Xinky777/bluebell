@@ -1,4 +1,4 @@
-module bluebell
+module github/Xinky777/bluebell
 
 go 1.16
 
