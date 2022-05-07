@@ -38,6 +38,8 @@ Transfer/sec:     16.04MB
 
 ```git
 git clone https://github.com/Xinky777/bluebell.git
+
+go get -u github/Xinky777/bluebell
 ```
 
 ### 运行
